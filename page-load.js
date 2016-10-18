@@ -30,7 +30,7 @@ function requestPage (url, push) {
 function attachLinkClickHandlers (parent) {
     let links = parent.querySelectorAll('a:not([href^="http"])');
 
-    links.forEach(function (link) {
+    [].forEach.call(links, function (link) {
         link.addEventListener('click', function (e) {
             requestPage(link.href, true);
 
